@@ -1,0 +1,32 @@
+{
+  "name": "AI-scraper",
+  "version": "1.0.0",
+  "description": "A rehearsal of a web scraping factory app using mongo for future A.I",
+  "main": "server.js",
+  "author": "Luiz Oliveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lamoliveira/AIScraper"
+  },
+  "homepage": "https://github.com/lamoliveira/AIScraper#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^5.2.15",
+    "morgan": "^1.9.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "serve-favicon": "^2.4.5"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "none"
+  }
+}

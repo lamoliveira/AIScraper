@@ -1,0 +1,130 @@
+
+<header class="header">
+  <h1 id="neon">[ AnySite ]</h1>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <button class="button-dark" id="configsitebutton" data-toggle="modal" data-target="#configsiteModal">Configuration</button>
+    	<label id="configsitelabel" for="configsite">Select site:</label>
+											<select class="custom-select" id="configsite">
+											</select>
+    <button class="button-dark" id="scrape" data-toggle="modal" data-target="#alertModal">Scrape New</button>
+    <a href="/articles/viewSaved"><button class="button-dark" id="viewSaved">View Saved</button></a>
+  
+</header>
+<div class="filler"></div>
+
+{{#each articles}}
+  {{#unless saved}}
+    <figure class="storyPanel clearfix">
+      <a href="{{storyUrl}}" class="pull-right" target="_blank">
+        <div class="imgBox">
+          <img src="{{imgUrl}}" alt="" class="storyImg" height="150">
+        </div>
+      </a>
+      {{#if storyUrl}}
+        <a href="{{storyUrl}}" class="storyLink" target="_blank">
+          <h2 class="storyHeadline">{{headline}}</h2>
+        </a>
+      {{else}}
+        <h3 class="storyHeadline">{{headline}}</h3>
+      {{/if}}
+      <h5 class="storyByline">{{byLine}}</h5>
+      <h6 class="storySummary">{{summary}}</h6>
+      <button class="storyButton" id="saveArticle" data-id="{{_id}}">Save Article</button>
+    </figure>
+  {{/unless}}
+{{/each}}
+
+{{!-- Modal for alerting number of scraped articles --}}
+<div id="alertModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body text-center">
+        <h2>You have scraped <span id="numArticles"></span> new articles</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- error modal --}}
+<div id="error" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h2>There was an error processing your request.  Please try again later.</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  {{!-- modal for displaying and creating configsite --}}
+  <div id="configsiteModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+           <br><br><br><br><br><br><br>
+          <input type="text" id="configsiteIdEntry" class="configsiteInput">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-center">Add a site configuration</h4>
+          <h5 class="modal-title text-center" id="warningconfigsite"></h5>
+        </div>
+        <div class="modal-body">
+          <div>
+          <label for  class="configsiteLabel">Title:</label>
+          <input type="text" id="configsiteTitleEntry" class="configsiteInput" placeholder="Enter site title">
+          </div>
+          <div>
+          <label for class="configsiteLabel">URL tag:</label>
+          <input type="text" id="configsiteUrlEntry" class="configsiteInput" placeholder="Enter URL tag">
+          </div>
+          <div>
+          <label for class="configsiteLabel">Panel tag:</label>
+          <input type="text" id="configsitePanelEntry" class="configsiteInput" placeholder="Enter Panel tag">
+          </div>
+          <div>
+          <label for class="configsiteLabel">Link tag:</label>
+          <input type="text" id="configsiteLinkEntry" class="configsiteInput" placeholder="Enter link tag">
+          </div>
+          <div>
+          <label for class="configsiteLabel">Href tag:</label>
+          <input type="text" id="configsiteRefEntry" class="configsiteInput" placeholder="Enter href tag">
+          </div>
+          <div>
+          <label for  class="configsiteLabel">Header:</label>
+          <input type="text" id="configsiteHeaderEntry" class="configsiteInput" placeholder="Enter Header tag">
+          </div>
+          <div>
+          <label for class="configsiteLabel">Summary tag:</label>
+          <input type="text" id="configsiteSummaryEntry" class="configsiteInput" placeholder="Enter Summary tag">
+          </div>
+          <div>
+          <label for class="configsiteLabel">Image tag:</label>
+          <input type="text" id="configsiteImgEntry" class="configsiteInput" placeholder="Enter Image tag">
+          </div>
+          <div>
+          <label for class="configsiteLabel">Image Attr:</label>
+          <input type="text" id="configsiteImgattrEntry" class="configsiteInput" placeholder="Enter img attr">
+          </div>
+          <div>
+          <label for class="configsiteLabel">Author tag:</label>
+          <input type="text" id="configsiteAuthorEntry" class="configsiteInput" placeholder="Enter Author tag">
+          </div>
+          <div id="configsiteArea"></div>
+        </div>
+        <div class="modal-footer">
+          <h5 class="instructions">Click the Configuration to read it, or X to delete</h5>
+          <button type="button" id="submitConfig">Save Configuration</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+	<!--jQuery CDN --> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/js/configsite.js" type="text/javascript"></script>
