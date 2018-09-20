@@ -1,6 +1,8 @@
 # **MongoDB/Mongoose ANY site web-scraper**
 
 ### To view the deployed version, _**[click here!](https://.herokuapp.com/)**_
+https://afternoon-escarpment-54838.herokuapp.com/ | https://git.heroku.com/afternoon-escarpment-54838.git
+mongolab-opaque-63875
 
 ## Technologies used:
 * Node.js
