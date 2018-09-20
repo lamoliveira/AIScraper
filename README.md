@@ -21,7 +21,7 @@
 ## choose using the dropbox wich site you want to scrape and click scrape new
 ![Mongo-scraper Img](public/assets/img/scraper4.png)
 
-## This is an app that uses Cheerio to scrape any site (the New York Times US section and Globo Brazil were parsed as an example) and pull the most recent articles, and it is possible to save each article scraped:
+## This is an app that uses Cheerio to scrape any site (the New York Times US section and Globo Brazil were parsed as an example) and pull the most recent articles, and it is possible to save each scraped article:
 Sample site 1: Globo Brazil
 ![Mongo-scraper Img](public/assets/img/scraper2.png)
 Sample site 2: NYTimes USA
